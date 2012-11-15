@@ -1,0 +1,11 @@
+<div class="page-header">
+    <h1>New cpost</h1>
+</div>
+
+<% form_for(cpost, {action: path_to.cposts(), method: 'POST', id: "cpost_form", class: 'form-horizontal'}, function (form) { %>
+    <%- partial('cposts/form.ejs', {locals: {form: form, cpost: cpost}}) %>
+    <div class="form-actions">
+        <%- form.submit('<i class="icon-ok icon-white"></i> Create cpost', {class: 'btn btn-primary'}) %> or
+        <%- link_to('Cancel', path_to.cposts(), {class: 'btn'}) %>
+    </div>
+<% });%>
